@@ -1,26 +1,42 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include<stdio.h>
+#include<stdlib.h>
 void main()
 {
-    int i=0, j=0, m[4][13], total = 0, lineas = 0;
-    for(i=1;i<4;i++){
-        for(j=1;j<13;j++){
-            printf("Ingrese cuanto recaudo el auto %d linea %d : ",j,i);
+    int m[4][13]={0},prom=0,total=0,i=0,j=0;
+    do
+    {
+        printf("Numero de coche : \n");
+        scanf("%d",&j);
+        if(j>=1)
+        {
+            printf("Ingrese la linea : \n");
+            scanf("%d",&i);
+            printf("Ingrese lo recaudado : ");
             scanf("%d",&m[i][j]);
         }
-    }
-    for(i=1;i<4;i++){
-        for(j=1;j<13;j++){
-            total+=m[i][j];
+        else
+        {
+            break;
         }
     }
-    for(i=1;i<4;i++){
-        lineas=0;
-        for(j=1;j<13;j++){
-                lineas+=m[i][j];
+    while(j>=1);
+    {
+        if(j<=1)
+        {
+        for(int i=1;i<=3;i++)
+        {
+            prom=0;
+            for(int j=1;j<=12;j++)
+            {
+                if(m[i][j]>0)
+                {
+                    printf("La recaudacion de la linea %d colectivo %d es :%d \n",i,j,m[i][j]);
+                    prom=prom+m[i][j];
+                }
+            }
+                total=total+prom;
         }
-        printf("Recaudacion de la linea %d es : %d \n",i,lineas);
+        }
     }
-    printf("La recaudacion total es : %d ",total);
+    printf("La recaudacion total es : %d",total);
 }
