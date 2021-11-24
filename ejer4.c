@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+void main()
 {
     int i=0, j=0, m[4][13], total = 0, lineas = 0;
     for(i=1;i<4;i++){
